@@ -5,7 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
+    private float _jumpEndTime;
+    [SerializeField] private float _jumpVelocity=5f;
+    [SerializeField] private float _jumpDuration=0.5f;
 
     // Start is called before the first frame update
     private void Awake()
@@ -17,13 +20,19 @@ public class Player : MonoBehaviour
     void Update()
     {
         var horizontal = Input.GetAxis("Horizontal");
-        Debug.Log(horizontal);
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         var vertical = rb.velocity.y;
 
-        if (Input.GetButtonDown("Fire1"))
-            vertical = 5;
+        if (Input.GetButtonDown("Jump"))
+        {
+            _jumpEndTime = Time.time + _jumpDuration;
+        }
 
-        rb.velocity = new Vector2(horizontal, vertical);
+        if (Input.GetButton("Jump") && _jumpEndTime > Time.time)
+        {
+            vertical = _jumpVelocity;
+        }
+            
+
+        rb.velocity= new Vector2(horizontal, vertical);
     }
 }
