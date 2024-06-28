@@ -12,17 +12,20 @@ public class Player : MonoBehaviour
     [SerializeField] Sprite _jumpSprite;
     [SerializeField] LayerMask _layerMask;
     [SerializeField] float _footOffSet=0.35f;
-
+    
     public bool IsGrounded;
+
     SpriteRenderer _spriteRenderer;
     float _horizontal;
     Animator _animator;
     int _jumpsRemaining;
+    AudioSource _audioSource;
 
     void Awake()
     {
         _animator=GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -56,6 +59,10 @@ public class Player : MonoBehaviour
         {
             _jumpEndTime = Time.time + _jumpDuration;
             _jumpsRemaining--;
+           _audioSource.Play();
+
+            _audioSource.pitch = _jumpsRemaining > 0 ? 1 : 1.2f;
+
         }
             
 
