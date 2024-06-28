@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] Sprite _jumpSprite;
     [SerializeField] LayerMask _layerMask;
     [SerializeField] float _footOffSet=0.35f;
+
     
     public bool IsGrounded;
 
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour
         origin = new Vector2(transform.position.x + _footOffSet, transform.position.y - spriteRenderer.bounds.extents.y);
         Gizmos.DrawLine(origin, origin + Vector2.down * 0.1f);
     }
+
 
     // Update is called once per frame
     void Update()
