@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     SpriteRenderer _spriteRenderer;
     float _horizontal;
     Animator _animator;
-    
+    int _jumpsRemaining;
 
     void Awake()
     {
@@ -52,8 +52,12 @@ public class Player : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         var vertical = rb.velocity.y;
 
-        if (Input.GetButtonDown("Jump") && IsGrounded)
+        if (Input.GetButtonDown("Jump") && _jumpsRemaining>0)
+        {
             _jumpEndTime = Time.time + _jumpDuration;
+            _jumpsRemaining--;
+        }
+            
 
         if (Input.GetButton("Jump") && _jumpEndTime > Time.time)
             vertical = _jumpVelocity;
@@ -84,6 +88,11 @@ public class Player : MonoBehaviour
         hit = Physics2D.Raycast(origin, Vector2.down, 0.1f, _layerMask);
         if (hit.collider)
             IsGrounded = true;
+
+        if (IsGrounded && GetComponent<Rigidbody2D>().velocity.y <= 0)
+        {
+            _jumpsRemaining = 2;
+        }
 
     }
 
