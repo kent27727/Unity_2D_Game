@@ -20,14 +20,14 @@ public class Player : MonoBehaviour
     SpriteRenderer _spriteRenderer;  
     Animator _animator; 
     AudioSource _audioSource;
-    Rigidbody _rb;
+    Rigidbody2D _rb;
 
     void Awake()
     {
-        _animator=GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
+        _animator =GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _audioSource = GetComponent<AudioSource>();
-        _rb=GetComponent<Rigidbody>();
         
     }
 
