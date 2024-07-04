@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 7781525320352961859}
   - component: {fileID: 743443888492664673}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Water Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
