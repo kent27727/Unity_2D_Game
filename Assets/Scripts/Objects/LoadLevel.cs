@@ -10,4 +10,5 @@ public class LoadLevel : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
             SceneManager.LoadScene(_levelName);
     }
+
 }
