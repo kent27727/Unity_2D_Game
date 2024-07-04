@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921750058791970632, guid: 57532f26b6541cd4088f745ee989649c, type: 3}
       propertyPath: m_Name
-      value: Snow Grass Variant
+      value: Snow Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921750058791970632, guid: 57532f26b6541cd4088f745ee989649c, type: 3}
+      propertyPath: m_TagString
+      value: Snow
       objectReference: {fileID: 0}
     - target: {fileID: 6130819116953383808, guid: 57532f26b6541cd4088f745ee989649c, type: 3}
       propertyPath: m_Name
