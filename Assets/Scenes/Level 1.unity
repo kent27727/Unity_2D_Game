@@ -937,6 +937,8 @@ GameObject:
   - component: {fileID: 1097190886}
   - component: {fileID: 1097190887}
   - component: {fileID: 1097190888}
+  - component: {fileID: 1097190890}
+  - component: {fileID: 1097190889}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1159,15 +1161,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be428a831f40914ca3f1bb55fd1fa1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalVelocity: 3
+  _maxHorizontalSpeed: 5
   _jumpVelocity: 5
   _jumpDuration: 0.5
-  _footOffSet: 0
   _jumpSprite: {fileID: 21300000, guid: 0bb79f9dcf0a4474c87782da4dcb5317, type: 3}
   _layerMask:
     serializedVersion: 2
     m_Bits: 55
+  _footOffset: 0.5
+  _groundAcceleration: 10
+  _snowAcceleration: 1
   IsGrounded: 1
+  IsOnSnow: 0
 --- !u!95 &1097190885
 Animator:
   serializedVersion: 5
@@ -1328,6 +1333,144 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097190879}
   m_Enabled: 1
+--- !u!114 &1097190889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097190879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: bee7d72fadc2ba4499d53ff9e4d74e83, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!60 &1097190890
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097190879}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.234375, y: -1}
+      - {x: 0.2734375, y: -0.8046875}
+      - {x: 0.3359375, y: -0.8046875}
+      - {x: 0.4140625, y: -0.75}
+      - {x: 0.40625, y: -0.6640625}
+      - {x: 0.359375, y: -0.5546875}
+      - {x: 0.3046875, y: -0.5234375}
+      - {x: 0.375, y: -0.4453125}
+      - {x: 0.40625, y: -0.3671875}
+      - {x: 0.4140625, y: -0.3203125}
+      - {x: 0.4140625, y: -0.171875}
+      - {x: 0.40625, y: -0.1015625}
+      - {x: 0.375, y: -0.0390625}
+      - {x: 0.3359375, y: 0.0234375}
+      - {x: 0.2109375, y: 0.15625}
+      - {x: 0.0859375, y: 0.1875}
+      - {x: -0.1171875, y: 0.1875}
+      - {x: -0.2421875, y: 0.1328125}
+      - {x: -0.3828125, y: -0.015625}
+      - {x: -0.4296875, y: -0.09375}
+      - {x: -0.4296875, y: -0.3125}
+      - {x: -0.421875, y: -0.390625}
+      - {x: -0.34375, y: -0.5078125}
+      - {x: -0.40625, y: -0.609375}
+      - {x: -0.421875, y: -0.75}
+      - {x: -0.390625, y: -0.78125}
+      - {x: -0.3203125, y: -0.7578125}
+      - {x: -0.2578125, y: -0.828125}
+      - {x: -0.25, y: -1}
+      - {x: -0.1171875, y: -1}
+      - {x: -0.0625, y: -0.90625}
+      - {x: 0.0859375, y: -0.9296875}
+      - {x: 0.1015625, y: -1}
+    - - {x: -0.3125, y: -0.3515625}
+      - {x: -0.3203125, y: -0.3046875}
+      - {x: -0.3203125, y: -0.1640625}
+      - {x: -0.3046875, y: -0.125}
+      - {x: -0.2578125, y: -0.03125}
+      - {x: -0.203125, y: 0.0234375}
+      - {x: -0.171875, y: 0.0390625}
+      - {x: -0.078125, y: 0.078125}
+      - {x: 0.0546875, y: 0.0859375}
+      - {x: 0.0625, y: 0.078125}
+      - {x: 0.09375, y: 0.0703125}
+      - {x: 0.1875, y: 0.0234375}
+      - {x: 0.296875, y: -0.1171875}
+      - {x: 0.3046875, y: -0.1640625}
+      - {x: 0.3125, y: -0.3046875}
+      - {x: 0.3046875, y: -0.3125}
+      - {x: 0.2734375, y: -0.3984375}
+      - {x: 0.28125, y: -0.125}
+      - {x: 0.2109375, y: -0.015625}
+      - {x: 0.1484375, y: 0.03125}
+      - {x: 0.09375, y: 0.0546875}
+      - {x: 0.0234375, y: 0.0703125}
+      - {x: -0.0390625, y: 0.0703125}
+      - {x: -0.109375, y: 0.0546875}
+      - {x: -0.1640625, y: 0.03125}
+      - {x: -0.25, y: -0.0546875}
+      - {x: -0.28125, y: -0.1171875}
+      - {x: -0.296875, y: -0.171875}
+      - {x: -0.2890625, y: -0.4140625}
+      - {x: -0.28125, y: -0.40625}
+  m_UseDelaunayMesh: 0
 --- !u!4 &1268811744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8759986901439721038, guid: 4676669452bb13644879a91eec5894eb, type: 3}
