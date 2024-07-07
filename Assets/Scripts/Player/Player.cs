@@ -12,9 +12,11 @@ public class Player : MonoBehaviour
     [SerializeField] float _footOffset = 0.5f;
     [SerializeField] float _groundAcceleration = 10;
     [SerializeField] float _snowAcceleration = 1;
+    [SerializeField] AudioClip _coinSfx;
 
     public bool IsGrounded;
     public bool IsOnSnow;
+    public int Coins { get; private set; }
 
     Animator _animator;
     SpriteRenderer _spriteRenderer;
@@ -25,7 +27,7 @@ public class Player : MonoBehaviour
     float _horizontal;
     int _jumpsRemaining;
     float _jumpEndTime;
-
+    
 
     void Awake()
     {
@@ -34,6 +36,8 @@ public class Player : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _rb = GetComponent<Rigidbody2D>();
         _playerInput = GetComponent<PlayerInput>();
+        
+        FindObjectOfType<PlayerCanvas>().Bind(this);
     }
 
     void OnDrawGizmos()
@@ -127,5 +131,11 @@ public class Player : MonoBehaviour
             _spriteRenderer.flipX = false;
         else if (_horizontal < 0)
             _spriteRenderer.flipX = true;
+    }
+
+    public void AddPoint()
+    {
+        Coins++;
+        _audioSource.PlayOneShot(_coinSfx);
     }
 }

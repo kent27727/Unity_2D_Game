@@ -136,7 +136,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635522366297128089}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -440,6 +440,7 @@ MonoBehaviour:
   _footOffset: 0.5
   _groundAcceleration: 10
   _snowAcceleration: 1
+  _coinSfx: {fileID: 8300000, guid: 23f1b7e8361a0da4da913f43a57d4ae9, type: 3}
   IsGrounded: 1
   IsOnSnow: 0
 --- !u!50 &3459884657540423066
