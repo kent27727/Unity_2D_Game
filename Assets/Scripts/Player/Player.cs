@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
 
     public bool IsGrounded;
     public bool IsOnSnow;
-    public int Coins { get; private set; }
+
+    public int Coins { get => _playerData.Coins; private set => _playerData.Coins=value; }
 
     Animator _animator;
     SpriteRenderer _spriteRenderer;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
     int _jumpsRemaining;
     float _jumpEndTime;
     
+    PlayerData _playerData = new PlayerData();
 
     void Awake()
     {
@@ -137,5 +139,10 @@ public class Player : MonoBehaviour
     {
         Coins++;
         _audioSource.PlayOneShot(_coinSfx);
+    }
+
+    internal void Bind(PlayerData playerData)
+    {
+        _playerData = playerData;
     }
 }

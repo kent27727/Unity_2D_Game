@@ -440,7 +440,7 @@ MonoBehaviour:
   _footOffset: 0.5
   _groundAcceleration: 10
   _snowAcceleration: 1
-  _coinSfx: {fileID: 8300000, guid: 23f1b7e8361a0da4da913f43a57d4ae9, type: 3}
+  _coinSfx: {fileID: 8300000, guid: ef391c0312963f34080cc7dd9e1e44ee, type: 3}
   IsGrounded: 1
   IsOnSnow: 0
 --- !u!50 &3459884657540423066
@@ -646,7 +646,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 32f5ec5cede083744bc1988aa8fb5b1a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0

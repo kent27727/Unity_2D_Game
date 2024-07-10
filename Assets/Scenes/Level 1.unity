@@ -1618,7 +1618,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a10017f7066dd854aae7705022dd4d0e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2654,7 +2654,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2829262488941471958, guid: fccdb121b4371074da781ac7ec63fb65, type: 3}
       propertyPath: m_Name
-      value: PlayerInputManager
+      value: PlayerInputManager & GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 5033106697885433930, guid: fccdb121b4371074da781ac7ec63fb65, type: 3}
       propertyPath: m_LocalPosition.x
